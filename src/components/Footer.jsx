@@ -1,4 +1,3 @@
-
 function Footer() {
   return (
     <footer id="contact">
@@ -17,11 +16,10 @@ function Footer() {
       </nav>
 
       <p>
-        &copy; {new Date().getFullYear()} Mercy's Journal.
-        All rights reserved.
+        &copy; {new Date().getFullYear()} Mercy's Journal. All rights reserved.
       </p>
     </footer>
-  )
+  );
 }
 
-export default Footer
+export default Footer;
