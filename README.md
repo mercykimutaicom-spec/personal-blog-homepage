@@ -1,33 +1,16 @@
-# Mercy's Journal
+# React + Vite
 
-A modern, interactive personal blog built using HTML, CSS,
-and JavaScript.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-## About the Project
+Currently, two official plugins are available:
 
-Mercy's Journal is a personal blogging website where I share
-stories, experiences, and ideas about technology, travel,
-food, lifestyle, and personal growth.
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
-## Features
+## React Compiler
 
-- Responsive blog homepage
-- Interactive blog post cards
-- Category filtering
-- Search functionality
-- Pagination
-- Dark and light mode
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## Technologies Used
+## Expanding the ESLint configuration
 
-- HTML5
-- CSS3
-- JavaScript
-
-## Project Status
-
-Currently under development.
-
-## Author
-
-Mercy
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
