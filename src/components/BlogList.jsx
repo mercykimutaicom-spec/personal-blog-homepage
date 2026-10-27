@@ -26,18 +26,22 @@ function BlogList() {
         </p>
       </div>
 
+      {/* Category filter buttons */}
       <div className="category-filters">
         {categories.map((category) => (
           <button
             key={category}
+            type="button"
             onClick={() => setSelectedCategory(category)}
             className={selectedCategory === category ? "active" : ""}
+            aria-pressed={selectedCategory === category}
           >
             {category}
           </button>
         ))}
       </div>
 
+      {/* Display all articles matching the selected category */}
       {filteredPosts.length > 0 ? (
         <div className="blog-grid">
           {filteredPosts.map((post) => (
