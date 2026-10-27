@@ -56,6 +56,10 @@ function BlogList() {
           </button>
         ))}
       </div>
+      <p className="results-count" aria-live="polite">
+        Showing {filteredPosts.length}{" "}
+        {filteredPosts.length === 1 ? "article" : "articles"}
+      </p>
 
       {/* Display all articles matching the selected category */}
       {filteredPosts.length > 0 ? (

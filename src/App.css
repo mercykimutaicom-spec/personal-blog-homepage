@@ -242,7 +242,6 @@ footer > p {
   gap: 24px;
   margin-top: 40px;
 }
-
 .blog-card {
   background: var(--surface);
   border: 1px solid var(--border);
@@ -252,11 +251,12 @@ footer > p {
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease;
+  animation: fadeInUp 1s ease both;
 }
 
 .blog-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 14px 35px rgba(25, 21, 46, 0.12);
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 18px 40px rgba(25, 21, 46, 0.16);
 }
 
 .blog-card-content {
@@ -352,4 +352,137 @@ footer > p {
 .category-filters button:focus-visible {
   outline: 3px solid var(--accent);
   outline-offset: 3px;
+}
+
+/* ========================================
+   BLOG SEARCH BAR
+======================================== */
+
+.blog-search {
+  margin-top: 25px;
+  margin-bottom: 20px;
+  max-width: 500px;
+}
+
+.blog-search input {
+  width: 100%;
+  padding: 14px 18px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--surface);
+  color: var(--text);
+  font-size: 1rem;
+  outline: none;
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.blog-search input::placeholder {
+  color: var(--text-muted);
+}
+
+.blog-search input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(91, 61, 245, 0.12);
+}
+/* ========================================
+   DARK MODE TOGGLE BUTTON
+======================================== */
+
+.theme-toggle {
+  background: var(--primary);
+  color: #ffffff;
+  border: 1px solid var(--primary);
+  padding: 10px 16px;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease;
+}
+
+.theme-toggle:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+.theme-toggle:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+/* Dark mode footer */
+.dark-mode footer {
+  background: var(--surface);
+  color: var(--text);
+  border-top: 1px solid var(--border);
+}
+
+.dark-mode footer p {
+  color: var(--text-muted);
+}
+
+.dark-mode footer h2 {
+  color: var(--accent);
+}
+
+.dark-mode footer a {
+  color: var(--text);
+}
+
+.dark-mode footer a:hover {
+  color: var(--accent);
+}
+/* ========================================
+   BLOG CARD ENTRANCE ANIMATION
+======================================== */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.blog-card {
+  animation: fadeInUp 1.5s ease-out both;
+}
+
+.blog-card:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+.blog-card:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+.blog-card:nth-child(4) {
+  animation-delay: 0.9s;
+}
+
+.blog-card:nth-child(5) {
+  animation-delay: 1.2s;
+}
+
+.blog-card:nth-child(6) {
+  animation-delay: 1.5s;
+}
+/* ========================================
+   REDUCED MOTION ACCESSIBILITY
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
 }

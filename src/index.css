@@ -13,6 +13,28 @@
   --text: #19152e;
   --text-muted: #777287;
   --border: #e7e2d8;
+  /* ========================================
+   DARK MODE COLOUR THEME
+======================================== */
+
+  .dark-mode {
+    --bg: #19152e;
+    --surface: #29243f;
+    --primary: #8b78ff;
+    --primary-dark: #6b54e8;
+    --accent: #c6ff3d;
+    --text: #f8f5ec;
+    --text-muted: #c0bbcf;
+    --border: #403956;
+
+    background: var(--bg);
+    color: var(--text);
+  }
+
+  .light-mode {
+    background: var(--bg);
+    color: var(--text);
+  }
 
   /* Typography */
   --sans: "Segoe UI", Roboto, Arial, sans-serif;
@@ -46,6 +68,11 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 }
 
 /* Main React container */
