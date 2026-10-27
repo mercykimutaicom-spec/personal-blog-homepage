@@ -313,3 +313,43 @@ footer > p {
     padding: 22px;
   }
 }
+
+/* ========================================
+   CATEGORY FILTER BUTTONS
+======================================== */
+
+.category-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.category-filters button {
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  padding: 10px 18px;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.category-filters button:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.category-filters button.active {
+  background: var(--primary);
+  color: #ffffff;
+  border-color: var(--primary);
+}
+
+.category-filters button:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
