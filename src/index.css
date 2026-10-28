@@ -3,6 +3,10 @@
    Colour Theme: Electric Indigo + Soft Cream + Neon Lime
 ======================================== */
 
+/* ========================================
+   LIGHT MODE — DEFAULT COLOUR THEME
+======================================== */
+
 :root {
   /* Colour palette */
   --bg: #f8f5ec;
@@ -11,30 +15,8 @@
   --primary-dark: #4328cc;
   --accent: #c6ff3d;
   --text: #19152e;
-  --text-muted: #777287;
+  --text-muted: #6f697d;
   --border: #e7e2d8;
-  /* ========================================
-   DARK MODE COLOUR THEME
-======================================== */
-
-  .dark-mode {
-    --bg: #19152e;
-    --surface: #29243f;
-    --primary: #8b78ff;
-    --primary-dark: #6b54e8;
-    --accent: #c6ff3d;
-    --text: #f8f5ec;
-    --text-muted: #c0bbcf;
-    --border: #403956;
-
-    background: var(--bg);
-    color: var(--text);
-  }
-
-  .light-mode {
-    background: var(--bg);
-    color: var(--text);
-  }
 
   /* Typography */
   --sans: "Segoe UI", Roboto, Arial, sans-serif;
@@ -55,10 +37,44 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Reset */
+/* ========================================
+   DARK MODE COLOUR THEME
+======================================== */
+
+.dark-mode {
+  --bg: #19152e;
+  --surface: #29243f;
+  --primary: #8b78ff;
+  --primary-dark: #6b54e8;
+  --accent: #c6ff3d;
+  --text: #f8f5ec;
+  --text-muted: #c0bbcf;
+  --border: #403956;
+
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* ========================================
+   LIGHT MODE
+======================================== */
+
+.light-mode {
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* ========================================
+   GLOBAL RESET
+======================================== */
+
 * {
   box-sizing: border-box;
 }
+
+/* ========================================
+   HTML AND BODY
+======================================== */
 
 html {
   scroll-behavior: smooth;
@@ -70,19 +86,26 @@ body {
   min-height: 100vh;
   background: var(--bg);
   color: var(--text);
+  font-family: var(--sans);
   transition:
     background-color 0.3s ease,
     color 0.3s ease;
 }
 
-/* Main React container */
+/* ========================================
+   MAIN REACT CONTAINER
+======================================== */
+
 #root {
   width: 100%;
   min-height: 100vh;
   margin: 0 auto;
 }
 
-/* Headings */
+/* ========================================
+   HEADINGS
+======================================== */
+
 h1,
 h2,
 h3,
@@ -93,40 +116,76 @@ h4 {
   font-weight: 700;
 }
 
-/* Paragraphs */
+/* ========================================
+   PARAGRAPHS
+======================================== */
+
 p {
   margin: 0;
   color: var(--text-muted);
 }
 
-/* Links */
+/* ========================================
+   LINKS
+======================================== */
+
 a {
   color: inherit;
   text-decoration: none;
 }
 
-/* Buttons and form elements */
+/* ========================================
+   BUTTONS AND FORM ELEMENTS
+======================================== */
+
 button,
 input,
 textarea {
   font: inherit;
 }
 
-/* Images */
+/* ========================================
+   IMAGES
+======================================== */
+
 img {
   display: block;
   max-width: 100%;
 }
 
-/* Selection highlight */
+/* ========================================
+   SELECTION HIGHLIGHT
+======================================== */
+
 ::selection {
   color: var(--text);
   background: var(--accent);
 }
 
-/* Responsive typography */
+/* ========================================
+   RESPONSIVE TYPOGRAPHY
+======================================== */
+
 @media (max-width: 768px) {
   :root {
     font-size: 15px;
+  }
+}
+
+/* ========================================
+   REDUCED MOTION ACCESSIBILITY
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }

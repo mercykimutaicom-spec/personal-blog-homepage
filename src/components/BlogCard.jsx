@@ -1,8 +1,4 @@
-import { useState } from "react";
-
 function BlogCard({ post }) {
-  const [isExpanded, setIsExpanded] = useState(false);
-
   return (
     <article className="blog-card">
       <div className="blog-card-content">
@@ -10,15 +6,7 @@ function BlogCard({ post }) {
 
         <h3>{post.title}</h3>
 
-        <p className="blog-card-excerpt">
-          {isExpanded ? post.excerpt : `${post.excerpt.slice(0, 80)}...`}
-        </p>
-        <button
-          className="read-more-button"
-          onClick={() => setIsExpanded(!isExpanded)}
-        >
-          {isExpanded ? "Show Less" : "Read More"}
-        </button>
+        <p className="blog-card-excerpt">{post.excerpt}</p>
 
         <div className="blog-card-meta">
           <span>{post.author}</span>
